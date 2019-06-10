@@ -222,7 +222,7 @@ static PyObject *_cext_dense_tree_shap(PyObject *self, PyObject *args)
     // clean up the created python objects 
 //    Py_XDECREF(children_left_array);
 //    Py_XDECREF(children_right_array);
-    Py_XDECREF(children_default_array);
+//    Py_XDECREF(children_default_array);
     Py_XDECREF(features_array);
     Py_XDECREF(thresholds_array);
     Py_XDECREF(values_array);
