@@ -206,7 +206,7 @@ static PyObject *_cext_dense_tree_shap(PyObject *self, PyObject *args)
     tfloat *out_contribs = (tfloat*)PyArray_DATA(out_contribs_array);
 
     // these are just a wrapper objects for all the pointers and numbers associated with
-    // the ensemble tree model and the datset we are explaing
+    // the ensemble tree model and the datset we are explaining
     TreeEnsemble trees = TreeEnsemble(
         children_left, children_right, children_default, features, thresholds, values,
         node_sample_weights, max_depth, tree_limit, base_offset,
@@ -220,15 +220,15 @@ static PyObject *_cext_dense_tree_shap(PyObject *self, PyObject *args)
     tfloat ret_value = (double)values[0];
 
     // clean up the created python objects 
-//    Py_XDECREF(children_left_array);
+    Py_XDECREF(children_left_array);
     Py_XDECREF(children_right_array);
     Py_XDECREF(children_default_array);
     Py_XDECREF(features_array);
     Py_XDECREF(thresholds_array);
     Py_XDECREF(values_array);
     Py_XDECREF(node_sample_weights_array);
-    Py_XDECREF(X_array);
-    Py_XDECREF(X_missing_array);
+    if (X_array != NULL) Py_XDECREF(X_array);
+    if (X_missing_array != NULL) Py_XDECREF(X_missing_array);
     if (y_array != NULL) Py_XDECREF(y_array);
     if (R_array != NULL) Py_XDECREF(R_array);
     if (R_missing_array != NULL) Py_XDECREF(R_missing_array);
