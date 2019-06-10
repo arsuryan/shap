@@ -233,7 +233,7 @@ static PyObject *_cext_dense_tree_shap(PyObject *self, PyObject *args)
 //    if (R_array != NULL) Py_XDECREF(R_array);
 //    if (R_missing_array != NULL) Py_XDECREF(R_missing_array);
 //    PyArray_ResolveWritebackIfCopy(out_contribs_array);
-    Py_XDECREF(out_contribs_array);
+//    Py_XDECREF(out_contribs_array);
 
     /* Build the output tuple */
     PyObject *ret = Py_BuildValue("d", ret_value);
