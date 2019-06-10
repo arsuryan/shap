@@ -226,7 +226,7 @@ static PyObject *_cext_dense_tree_shap(PyObject *self, PyObject *args)
 //    Py_XDECREF(features_array);
 //    Py_XDECREF(thresholds_array);
 //    Py_XDECREF(values_array);
-    Py_XDECREF(node_sample_weights_array);
+//    Py_XDECREF(node_sample_weights_array);
     Py_XDECREF(X_array);
     Py_XDECREF(X_missing_array);
     if (y_array != NULL) Py_XDECREF(y_array);
